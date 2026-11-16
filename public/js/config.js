@@ -1,15 +1,15 @@
-// Configuration
 const CONFIG = {
-    // Telegram Configuration
-    TELEGRAM_BOT_TOKEN: '8685893661:AAEoyKEECn7FV0ktYXtMwAmVh6_p3yFuFzM',
-    TELEGRAM_CHAT_ID: '-5219443301',
+    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
+    TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
 
-    // Notification Type: 'telegram', 'email', or 'both'
-    NOTIFICATION_TYPE: 'telegram',
+    NOTIFICATION_TYPE:
+        process.env.NOTIFICATION_TYPE || 'telegram',
 
-    // Security
-    SECRET_KEY: 'HDNDT-JDHT8FNEK-JJHR',
-    STORAGE_EXPIRY: 60 * 60 * 1000,
-    COUNTDOWN_TIME: 30
+    SECRET_KEY: process.env.SECRET_KEY,
+
+    STORAGE_EXPIRY:
+        Number(process.env.STORAGE_EXPIRY) || 3600000,
+
+    COUNTDOWN_TIME:
+        Number(process.env.COUNTDOWN_TIME) || 30
 };
-
